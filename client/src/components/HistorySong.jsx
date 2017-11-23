@@ -20,6 +20,7 @@ class HistorySong extends Component {
     const { index, isActive, isPlaying, navigateTo, playlist, playSong, song } = this.props;
     const { artworkUrl, id, title, user } = song;
     const { username } = user;
+    const newArtworkUrl = artworkUrl || user.avatarUrl;
 
     return (
       <div
@@ -30,7 +31,7 @@ class HistorySong extends Component {
       >
         <div
           className="history__song__artwork"
-          style={{ backgroundImage: `url(${getImageUrl(artworkUrl)})` }}
+          style={{ backgroundImage: `url(${getImageUrl(newArtworkUrl)})` }}
         >
           <ArtworkPlay
             index={index}

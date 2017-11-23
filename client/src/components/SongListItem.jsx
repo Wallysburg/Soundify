@@ -39,13 +39,16 @@ const SongListItem = ({
   const { artworkUrl, commentCount, favoritingsCount, id, playbackCount, title, user } = song;
   const { avatarUrl, username } = user;
 
+  const newArtworkUrl = artworkUrl || user.avatarUrl;
+
+  console.log(newArtworkUrl);
   return (
     <div className={`song-list__item ${isActive ? 'song-list__item--active' : ''}`}>
       <div className="song-list__item__artwork">
         <div
           className="song-list__item__artwork__image"
           style={{
-            backgroundImage: `url(${getImageUrl(artworkUrl, IMAGE_SIZES.LARGE)})`,
+            backgroundImage: `url(${getImageUrl(newArtworkUrl, IMAGE_SIZES.LARGE)})`,
           }}
         >
           <ArtworkPlay

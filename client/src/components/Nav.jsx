@@ -53,7 +53,7 @@ const Nav = ({
           navigateTo={navigateTo}
           path={SONGS_PATH}
         >
-          SoundRedux
+          Mockify
         </Link>
       </div>
       <div className="nav__section nav__section--session">

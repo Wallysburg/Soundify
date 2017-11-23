@@ -45,13 +45,15 @@ const SongMain = ({
   } = song;
   const { avatarUrl, username } = user;
 
+  const newArtworkUrl = artworkUrl || avatarUrl;
+
   return (
     <div className={`song-main ${isActive ? 'song-main--active' : ''}`}>
       <div className="song-main__artwork">
         <div
           className="song-main__artwork__image"
           style={{
-            backgroundImage: `url(${getImageUrl(artworkUrl, IMAGE_SIZES.LARGE)})`,
+            backgroundImage: `url(${getImageUrl(newArtworkUrl, IMAGE_SIZES.LARGE)})`,
           }}
         >
           <ArtworkPlay

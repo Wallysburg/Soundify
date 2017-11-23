@@ -43,12 +43,15 @@ const Player = ({
   const { username } = user;
   const volume = muted ? 0 : player.volume;
 
+  const newArtworkUrl = artworkUrl || user.avatarUrl;
+
+  console.log(newArtworkUrl);
   return (
     <div className="player">
       <div className="player__inner container">
         <div className="player__section player__section--song">
           <div className="player__song">
-            <div className="player__song__artwork" style={{ backgroundImage: `url(${artworkUrl})` }} />
+            <div className="player__song__artwork" style={{ backgroundImage: `url(${newArtworkUrl})` }} />
             <div className="player__song__main">
               <Link
                 className="player__song__title"
