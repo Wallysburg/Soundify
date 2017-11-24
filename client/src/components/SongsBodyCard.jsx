@@ -39,13 +39,14 @@ const SongsBodyCard = ({
   const { artworkUrl, id, title, user } = song;
   const { avatarUrl, username } = user;
 
+  const newArtworkURL = artworkUrl || avatarUrl;
   return (
     <div className={`songs-body-card ${isActive ? 'songs-body-card--active' : ''}`}>
       <div className="songs-body-card__inner">
         <div
           className="songs-body-card__artwork"
           style={{
-            backgroundImage: `url(${getImageUrl(artworkUrl, IMAGE_SIZES.LARGE)})`,
+            backgroundImage: `url(${getImageUrl(newArtworkURL, IMAGE_SIZES.LARGE)})`,
           }}
         >
           <ArtworkPlay
