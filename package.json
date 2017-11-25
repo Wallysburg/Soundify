@@ -3,6 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "client/src/index.js",
+  "jest": {
+    "verbose": true,
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "client/src/**/*.{js,jsx}",
+      "!**/node_modules/**"
+    ]
+  },
   "scripts": {
     "prebuild": "npm run clean && npm run copy",
     "build": "NODE_ENV=production webpack -p --config ./client/webpack.prod.config.js",
